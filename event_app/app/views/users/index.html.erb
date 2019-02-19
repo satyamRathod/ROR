@@ -1,0 +1,20 @@
+<table class="table">
+<thead class="thead-dark">
+<tr>
+  <th scope="col">First</th>
+  <th scope="col">Last</th>
+  <th scope="col">action</th>
+</tr>
+</thead>
+<tbody>
+<% @users.each do |user| %>
+    <tr>
+      <td><%= user.firstName %></td>
+      <td><%= user.lastName %></td>
+      <td><%= link_to 'Show', user %></td>
+      <td><%= link_to 'Edit', edit_user_path(user) %></td>
+      <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</tbody>
+<%= link_to 'New user', new_user_path %>
